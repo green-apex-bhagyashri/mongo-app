@@ -1,0 +1,122 @@
+Started GET "/" for ::1 at 2023-04-21 17:39:32 +0530
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /home/greenapex-bhagyasri/.rvm/gems/ruby-2.6.5/gems/railties-6.1.7.3/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /home/greenapex-bhagyasri/.rvm/gems/ruby-2.6.5/gems/railties-6.1.7.3/lib/rails/templates/rails/welcome/index.html.erb (Duration: 6.4ms | Allocations: 506)
+Completed 200 OK in 17ms (Views: 10.2ms | MongoDB: 0.0ms | Allocations: 2856)
+
+
+Started GET "/api/users" for ::1 at 2023-04-21 18:05:26 +0530
+Processing by Api::UsersController#index as */*
+Completed 500 Internal Server Error in 44ms (MongoDB: 0.0ms | Allocations: 12549)
+
+
+  
+Mongoid::Errors::NoClientConfig (
+message:
+  No configuration could be found for a client named 'default'.
+summary:
+  When attempting to create the new client, Mongoid could not find a client configuration for the name: 'default'. This is necessary in order to know the host, port, and options needed to connect.
+resolution:
+  Double check your mongoid.yml to make sure under the clients key that a configuration exists for 'default'. If you have set the configuration programatically, ensure that 'default' exists in the configuration hash.):
+  
+app/controllers/api/users_controller.rb:6:in `index'
+Started GET "/api/users" for ::1 at 2023-04-21 18:06:17 +0530
+Processing by Api::UsersController#index as */*
+MONGODB | Topology type 'unknown' initializing.
+MONGODB | There was a change in the members of the 'Unknown' topology.
+MONGODB | Server localhost:27017 initializing.
+MONGODB | Waiting for up to 30.00 seconds for servers to be scanned: #<Cluster topology=Unknown[localhost:27017] servers=[#<Server address=localhost:27017 UNKNOWN>]>
+MONGODB | Server description for localhost:27017 changed from 'unknown' to 'standalone'.
+MONGODB | Topology type 'Unknown' changed to type 'Single'.
+MONGODB | localhost:27017 req:6 conn:1:1 sconn:3 | my_mongo_app_development.find | STARTED | {"find"=>"users", "filter"=>{}, "limit"=>1, "projection"=>{"_id"=>1}, "$db"=>"my_mongo_app_development", "lsid"=>{"id"=><BSON::Binary:0x47326068283820 type=uuid data=0x3620b0c22d0f4d14...>}}
+MONGODB | localhost:27017 req:6 | my_mongo_app_development.find | SUCCEEDED | 0.002s
+MONGODB | localhost:27017 req:7 conn:1:1 sconn:3 | my_mongo_app_development.find | STARTED | {"find"=>"users", "filter"=>{}, "$db"=>"my_mongo_app_development", "lsid"=>{"id"=><BSON::Binary:0x47326068283820 type=uuid data=0x3620b0c22d0f4d14...>}}
+MONGODB | localhost:27017 req:7 | my_mongo_app_development.find | SUCCEEDED | 0.002s
+Completed 200 OK in 44ms (Views: 0.3ms | MongoDB: 0.0ms | Allocations: 11467)
+
+
+MONGODB | Server description for localhost:27017 changed from 'standalone' to 'standalone'.
+MONGODB | There was a change in the members of the 'Single' topology.
+Started GET "/api/users" for ::1 at 2023-04-21 18:06:48 +0530
+Processing by Api::UsersController#index as */*
+MONGODB | localhost:27017 req:11 conn:1:1 sconn:3 | my_mongo_app_development.find | STARTED | {"find"=>"users", "filter"=>{}, "limit"=>1, "projection"=>{"_id"=>1}, "$db"=>"my_mongo_app_development", "lsid"=>{"id"=><BSON::Binary:0x47326068283820 type=uuid data=0x3620b0c22d0f4d14...>}}
+MONGODB | localhost:27017 req:11 | my_mongo_app_development.find | SUCCEEDED | 0.000s
+MONGODB | localhost:27017 req:12 conn:1:1 sconn:3 | my_mongo_app_development.find | STARTED | {"find"=>"users", "filter"=>{}, "$db"=>"my_mongo_app_development", "lsid"=>{"id"=><BSON::Binary:0x47326068283820 type=uuid data=0x3620b0c22d0f4d14...>}}
+MONGODB | localhost:27017 req:12 | my_mongo_app_development.find | SUCCEEDED | 0.001s
+Completed 200 OK in 12ms (Views: 0.5ms | MongoDB: 0.0ms | Allocations: 7582)
+
+
+Started GET "/dede" for ::1 at 2023-04-21 18:07:04 +0530
+  
+ActionController::RoutingError (No route matches [GET] "/dede"):
+  
+Started GET "/api/typehead/ant" for ::1 at 2023-04-21 18:07:47 +0530
+Processing by Api::UsersController#typehead as */*
+  Parameters: {"querry"=>"ant"}
+MONGODB | localhost:27017 req:19 conn:1:1 sconn:3 | my_mongo_app_development.find | STARTED | {"find"=>"users", "filter"=>{"$or"=>[{"first_name"=>/{params[:search]}/i}, {"last_name"=>/{params[:search]}/i}, {"email"=>/{params[:search]}/i}]}, "$db"=>"my_mongo_app_development", "lsid"=>{"id"=><BSON::Binary:0x47326068283820 type=uuid data=0x3620b0...
+MONGODB | localhost:27017 req:19 | my_mongo_app_development.find | SUCCEEDED | 0.001s
+Completed 200 OK in 8ms (Views: 0.2ms | MongoDB: 0.0ms | Allocations: 6473)
+
+
+Started GET "/api/typehead/se" for ::1 at 2023-04-21 18:07:54 +0530
+Processing by Api::UsersController#typehead as */*
+  Parameters: {"querry"=>"se"}
+MONGODB | localhost:27017 req:20 conn:1:1 sconn:3 | my_mongo_app_development.find | STARTED | {"find"=>"users", "filter"=>{"$or"=>[{"first_name"=>/{params[:search]}/i}, {"last_name"=>/{params[:search]}/i}, {"email"=>/{params[:search]}/i}]}, "$db"=>"my_mongo_app_development", "lsid"=>{"id"=><BSON::Binary:0x47326068283820 type=uuid data=0x3620b0...
+MONGODB | localhost:27017 req:20 | my_mongo_app_development.find | SUCCEEDED | 0.001s
+Completed 200 OK in 2ms (Views: 0.1ms | MongoDB: 0.0ms | Allocations: 1722)
+
+
+Started GET "/api/typehead/se" for ::1 at 2023-04-21 18:07:55 +0530
+Processing by Api::UsersController#typehead as */*
+  Parameters: {"querry"=>"se"}
+MONGODB | localhost:27017 req:21 conn:1:1 sconn:3 | my_mongo_app_development.find | STARTED | {"find"=>"users", "filter"=>{"$or"=>[{"first_name"=>/{params[:search]}/i}, {"last_name"=>/{params[:search]}/i}, {"email"=>/{params[:search]}/i}]}, "$db"=>"my_mongo_app_development", "lsid"=>{"id"=><BSON::Binary:0x47326068283820 type=uuid data=0x3620b0...
+MONGODB | localhost:27017 req:21 | my_mongo_app_development.find | SUCCEEDED | 0.000s
+Completed 200 OK in 3ms (Views: 0.2ms | MongoDB: 0.0ms | Allocations: 1724)
+
+
+Started GET "/api/users" for ::1 at 2023-04-21 18:08:15 +0530
+Processing by Api::UsersController#index as */*
+MONGODB | localhost:27017 req:24 conn:1:1 sconn:3 | my_mongo_app_development.find | STARTED | {"find"=>"users", "filter"=>{}, "limit"=>1, "projection"=>{"_id"=>1}, "$db"=>"my_mongo_app_development", "lsid"=>{"id"=><BSON::Binary:0x47326068283820 type=uuid data=0x3620b0c22d0f4d14...>}}
+MONGODB | localhost:27017 req:24 | my_mongo_app_development.find | SUCCEEDED | 0.000s
+MONGODB | localhost:27017 req:25 conn:1:1 sconn:3 | my_mongo_app_development.find | STARTED | {"find"=>"users", "filter"=>{}, "$db"=>"my_mongo_app_development", "lsid"=>{"id"=><BSON::Binary:0x47326068283820 type=uuid data=0x3620b0c22d0f4d14...>}}
+MONGODB | localhost:27017 req:25 | my_mongo_app_development.find | SUCCEEDED | 0.000s
+Completed 200 OK in 3ms (Views: 0.3ms | MongoDB: 0.0ms | Allocations: 3118)
+
+
+Started GET "/typehead/se" for ::1 at 2023-04-21 18:08:41 +0530
+  
+ActionController::RoutingError (No route matches [GET] "/typehead/se"):
+  
+Started GET "/api/typehead/se" for ::1 at 2023-04-21 18:08:50 +0530
+Processing by Api::UsersController#typehead as */*
+  Parameters: {"querry"=>"se"}
+MONGODB | localhost:27017 req:30 conn:1:1 sconn:3 | my_mongo_app_development.find | STARTED | {"find"=>"users", "filter"=>{"$or"=>[{"first_name"=>/{params[:search]}/i}, {"last_name"=>/{params[:search]}/i}, {"email"=>/{params[:search]}/i}]}, "$db"=>"my_mongo_app_development", "lsid"=>{"id"=><BSON::Binary:0x47326068283820 type=uuid data=0x3620b0...
+MONGODB | localhost:27017 req:30 | my_mongo_app_development.find | SUCCEEDED | 0.001s
+Completed 200 OK in 3ms (Views: 0.2ms | MongoDB: 0.0ms | Allocations: 1722)
+
+
+Started GET "/api/typehead/se" for ::1 at 2023-04-24 18:44:48 +0530
+Processing by Api::UsersController#typehead as */*
+  Parameters: {"querry"=>"se"}
+MONGODB | Topology type 'unknown' initializing.
+MONGODB | There was a change in the members of the 'Unknown' topology.
+MONGODB | Server localhost:27017 initializing.
+MONGODB | Waiting for up to 30.00 seconds for servers to be scanned: #<Cluster topology=Unknown[localhost:27017] servers=[#<Server address=localhost:27017 UNKNOWN>]>
+MONGODB | Server description for localhost:27017 changed from 'unknown' to 'standalone'.
+MONGODB | Topology type 'Unknown' changed to type 'Single'.
+MONGODB | localhost:27017 req:6 conn:1:1 sconn:3 | my_mongo_app_development.find | STARTED | {"find"=>"users", "filter"=>{"$or"=>[{"first_name"=>/{params[:querry]}/i}, {"last_name"=>/{params[:querry]}/i}, {"email"=>/{params[:querry]}/i}]}, "$db"=>"my_mongo_app_development", "lsid"=>{"id"=><BSON::Binary:0x47025365620060 type=uuid data=0xc63dba...
+MONGODB | localhost:27017 req:6 | my_mongo_app_development.find | SUCCEEDED | 0.003s
+Completed 200 OK in 46ms (Views: 1.4ms | MongoDB: 0.0ms | Allocations: 10131)
+
+
+MONGODB | Server description for localhost:27017 changed from 'standalone' to 'standalone'.
+MONGODB | There was a change in the members of the 'Single' topology.
+Started GET "/api/users" for ::1 at 2023-04-24 18:45:07 +0530
+Processing by Api::UsersController#index as */*
+MONGODB | localhost:27017 req:8 conn:1:1 sconn:3 | my_mongo_app_development.find | STARTED | {"find"=>"users", "filter"=>{}, "limit"=>1, "projection"=>{"_id"=>1}, "$db"=>"my_mongo_app_development", "lsid"=>{"id"=><BSON::Binary:0x47025365620060 type=uuid data=0xc63dba32adb74027...>}}
+MONGODB | localhost:27017 req:8 | my_mongo_app_development.find | SUCCEEDED | 0.002s
+MONGODB | localhost:27017 req:9 conn:1:1 sconn:3 | my_mongo_app_development.find | STARTED | {"find"=>"users", "filter"=>{}, "$db"=>"my_mongo_app_development", "lsid"=>{"id"=><BSON::Binary:0x47025365620060 type=uuid data=0xc63dba32adb74027...>}}
+MONGODB | localhost:27017 req:9 | my_mongo_app_development.find | SUCCEEDED | 0.001s
+Completed 200 OK in 13ms (Views: 2.5ms | MongoDB: 0.0ms | Allocations: 3124)
+
+
