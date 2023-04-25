@@ -1,8 +1,8 @@
 class Api::UsersController < ApplicationController
-	before_action :users_list, only: [:index]
 	before_action :set_user, only: [:show, :update, :destroy]
 
 	def index
+		@users = User.all
 		if @users.present?
 			render json: Api::UserSerializer.new(@users).serializable_hash, status: :ok
 		else
@@ -61,10 +61,6 @@ class Api::UsersController < ApplicationController
 
 	def set_user
 		@user = USer.find_by(id: params[:id])
-	end
-
-	def users_list
-		@users = User.all
 	end
 
 	def user_params
